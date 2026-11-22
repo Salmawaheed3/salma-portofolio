@@ -38,9 +38,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigateSection }) => {
         <a
           href="#top"
           onClick={(e) => handleLinkClick(e, '#top')}
-          className="min-w-0 truncate font-display text-sm font-semibold tracking-tight text-zinc-100 transition-colors hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded-sm sm:text-base"
+          className="inline-flex min-h-[38px] min-w-0 items-center truncate font-display text-sm font-semibold tracking-tight text-zinc-100 transition-colors hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded-sm sm:min-h-[40px] sm:text-base"
         >
-          {data.profile.name}
+          <span className="truncate">{data.profile.name}</span>
         </a>
 
         {/* Zone 2: Primary Navigation Links */}

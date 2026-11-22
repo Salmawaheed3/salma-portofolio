@@ -135,7 +135,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
                 type="button"
                 onClick={() => setLocale('en')}
                 aria-pressed={locale === 'en'}
-                className={`min-h-[30px] whitespace-nowrap shrink-0 rounded-md px-2 py-1 text-xs font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 sm:min-h-[32px] sm:px-2.5 ${
+                className={`min-h-[36px] whitespace-nowrap shrink-0 rounded-md px-2.5 py-1 text-xs font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
                   locale === 'en'
                     ? 'bg-zinc-100 text-zinc-950'
                     : 'text-zinc-400 hover:text-zinc-100'
@@ -147,7 +147,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
                 type="button"
                 onClick={() => setLocale('ar')}
                 aria-pressed={locale === 'ar'}
-                className={`min-h-[30px] whitespace-nowrap shrink-0 rounded-md px-2 py-1 text-xs font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 sm:min-h-[32px] sm:px-2.5 ${
+                className={`min-h-[36px] whitespace-nowrap shrink-0 rounded-md px-2.5 py-1 text-xs font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
                   locale === 'ar'
                     ? 'bg-zinc-100 text-zinc-950'
                     : 'text-zinc-400 hover:text-zinc-100'
@@ -275,7 +275,7 @@ export const ProjectDetailPage: React.FC<ProjectDetailPageProps> = ({
                           target="_blank"
                           rel="noopener noreferrer"
                           dir="ltr"
-                          className="inline-flex max-w-full items-center gap-1.5 break-all font-mono text-xs font-medium text-emerald-400 underline-offset-4 transition-colors hover:text-emerald-300 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded-sm"
+                          className="inline-flex min-h-[36px] max-w-full items-center gap-1.5 break-all font-mono text-xs font-medium text-emerald-400 underline-offset-4 transition-colors hover:text-emerald-300 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded-sm"
                         >
                           <span>{project.liveUrl.replace(/^https?:\/\//, '').replace(/\/$/, '')}</span>
                           <ExternalLink className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />

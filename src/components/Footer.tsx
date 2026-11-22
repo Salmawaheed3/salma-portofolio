@@ -27,44 +27,44 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection }) => {
           © {year} {data.profile.name} · {data.profile.title}
         </span>
 
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 sm:gap-x-6">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-x-6">
           <a
             href="#about"
             onClick={(e) => handleLinkClick(e, '#about')}
-            className="inline-flex min-h-[32px] items-center transition-colors hover:text-zinc-300"
+            className="inline-flex min-h-[36px] items-center transition-colors hover:text-zinc-300"
           >
             {footer.philosophy}
           </a>
           <a
             href="#projects"
             onClick={(e) => handleLinkClick(e, '#projects')}
-            className="inline-flex min-h-[32px] items-center transition-colors hover:text-zinc-300"
+            className="inline-flex min-h-[36px] items-center transition-colors hover:text-zinc-300"
           >
             {footer.caseStudies}
           </a>
           <a
             href="#experience"
             onClick={(e) => handleLinkClick(e, '#experience')}
-            className="inline-flex min-h-[32px] items-center transition-colors hover:text-zinc-300"
+            className="inline-flex min-h-[36px] items-center transition-colors hover:text-zinc-300"
           >
             {footer.experience}
           </a>
           <a
             href="#contact"
             onClick={(e) => handleLinkClick(e, '#contact')}
-            className="inline-flex min-h-[32px] items-center transition-colors hover:text-zinc-300"
+            className="inline-flex min-h-[36px] items-center transition-colors hover:text-zinc-300"
           >
             {footer.contact}
           </a>
 
           <span aria-hidden="true" className="text-zinc-800">|</span>
 
-          <div className="inline-flex items-center gap-2">
+          <div className="inline-flex items-center gap-1.5">
             <button
               type="button"
               onClick={() => setLocale('en')}
               aria-pressed={locale === 'en'}
-              className={`min-h-[32px] px-1 transition-colors ${
+              className={`inline-flex min-h-[36px] min-w-[36px] items-center justify-center rounded px-2 transition-colors ${
                 locale === 'en' ? 'font-medium text-emerald-400' : 'hover:text-zinc-300'
               }`}
             >
@@ -75,7 +75,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection }) => {
               type="button"
               onClick={() => setLocale('ar')}
               aria-pressed={locale === 'ar'}
-              className={`min-h-[32px] px-1 transition-colors ${
+              className={`inline-flex min-h-[36px] min-w-[36px] items-center justify-center rounded px-2 transition-colors ${
                 locale === 'ar' ? 'font-medium text-emerald-400' : 'hover:text-zinc-300'
               }`}
             >
