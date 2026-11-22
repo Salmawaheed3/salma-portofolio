@@ -522,6 +522,19 @@ export const portfolioContent: Record<Locale, PortfolioLocaleData> = {
           solutionArchitecture: {
             overview:
               'Conversations from Facebook, WhatsApp, and Instagram flow through automated FAQ handling and lead qualification before syncing directly into Odoo CRM and generating draft quotations held for human pricing review.',
+            diagrams: [
+              {
+                id: 'omnichannel-lead-workflow',
+                tabLabel: '01. Omnichannel Architecture',
+                title: '01. Omnichannel Intake, Qualification, Odoo CRM & Quotation Flow',
+                caption:
+                  'Facebook, WhatsApp & Instagram → Unified Inquiry Triage & FAQ Replies → Lead Qualification Filter → Odoo CRM Auto-Sync + Draft Price Quotation → Human-in-the-Loop Pricing Review Checkpoint (+40% Qualified Leads).',
+                imageSrc: '/assets/diagrams/omnichannel-lead-agent.svg',
+                imageAlt:
+                  'Omnichannel Lead Agent system architecture showing Facebook, WhatsApp, and Instagram intake, FAQ handling, lead qualification, Odoo CRM auto-sync, draft quotations, and human pricing review checkpoint.',
+                surfaceTone: 'light',
+              },
+            ],
             illustrativeFlow: [
               {
                 stage: '01. Omnichannel Inquiry Intake',
@@ -1049,6 +1062,19 @@ export const portfolioContent: Record<Locale, PortfolioLocaleData> = {
           solutionArchitecture: {
             overview:
               'Unstructured product catalog entries and incoming search queries pass through fine-tuned BERT NER for structured entity extraction prior to parallel FAISS dense similarity search and BM25 sparse retrieval.',
+            diagrams: [
+              {
+                id: 'product-discovery-arch',
+                tabLabel: '01. Hybrid Search Architecture',
+                title: '01. Domain BERT NER + Parallel FAISS & BM25 Hybrid Search',
+                caption:
+                  'Unstructured Product Catalog & Shopper Queries → Fine-Tuned BERT (Domain NER) → Parallel FAISS Dense Vector Index & BM25 Sparse Retrieval → Hybrid Ranking & Matched In-Stock Results (~70% fewer zero-result queries).',
+                imageSrc: '/assets/diagrams/product-discovery-hybrid-search.svg',
+                imageAlt:
+                  'Product Discovery and Hybrid Search architecture flowing from product catalog and shopper queries through fine-tuned BERT NER into parallel FAISS dense and BM25 sparse retrieval.',
+                surfaceTone: 'light',
+              },
+            ],
             illustrativeFlow: [
               {
                 stage: '01. Domain-Specific NER (BERT)',
@@ -1121,6 +1147,19 @@ export const portfolioContent: Record<Locale, PortfolioLocaleData> = {
           solutionArchitecture: {
             overview:
               'LangGraph state graphs coordinate multi-step reasoning across specialized support nodes backed by dynamic memory, hybrid vector search over enterprise knowledge, and structured tool calling with optimized LLM inference.',
+            diagrams: [
+              {
+                id: 'enterprise-agentic-arch',
+                tabLabel: '01. Multi-Agent Architecture',
+                title: '01. Stateful LangGraph Multi-Agent Customer Support Architecture',
+                caption:
+                  'Multi-Turn Customer Inquiry → LangGraph Stateful Reasoning Graph (Dynamic Memory, Specialized Agent Nodes, LLM Inference Tuning) → Hybrid Vector Search & Structured Tool Calling → Autonomous Resolution (>60% escalation reduction) or Targeted Human Escalation.',
+                imageSrc: '/assets/diagrams/enterprise-agentic-orchestration.svg',
+                imageAlt:
+                  'Enterprise Agentic AI architecture showing LangGraph stateful reasoning graph, dynamic memory, specialized agent nodes, hybrid vector search, structured tool calling, and resolution gate.',
+                surfaceTone: 'light',
+              },
+            ],
             illustrativeFlow: [
               {
                 stage: '01. Stateful Reasoning Graph',
@@ -1703,6 +1742,19 @@ export const portfolioContent: Record<Locale, PortfolioLocaleData> = {
           solutionArchitecture: {
             overview:
               'تستقبل المنظومة الرسائل من Facebook و WhatsApp و Instagram، تنفذ الرد التلقائي وتصفية العملاء المحتملين، ثم تسجل العملاء المؤهلين وتحدثهم تلقائياً في Odoo CRM مع تجهيز مسودة عرض السعر للمراجعة البشرية.',
+            diagrams: [
+              {
+                id: 'omnichannel-lead-workflow',
+                tabLabel: '01. المعمارية الكاملة',
+                title: '01. معمارية الاستقبال متعدد القنوات و Odoo CRM وعروض الأسعار',
+                caption:
+                  'Facebook و WhatsApp و Instagram ← الرد التلقائي على الاستفسارات ← فلتر تأهيل العملاء المحتملين ← المزامنة التلقائية مع Odoo CRM وإعداد مسودة عرض السعر ← نقطة المراجعة البشرية لتحديد السعر قبل الإرسال (+40% عملاء محتملين).',
+                imageSrc: '/assets/diagrams/omnichannel-lead-agent.svg',
+                imageAlt:
+                  'مخطط معمارية Omnichannel Lead Agent من استقبال Facebook و WhatsApp و Instagram إلى التصفية والمزامنة مع Odoo CRM وعروض الأسعار والمراجعة البشرية.',
+                surfaceTone: 'light',
+              },
+            ],
             illustrativeFlow: [
               {
                 stage: '01. استقبال والرد على المنصات الثلاث',
@@ -2230,6 +2282,19 @@ export const portfolioContent: Record<Locale, PortfolioLocaleData> = {
           solutionArchitecture: {
             overview:
               'النصوص والاستعلامات تمر عبر Fine-Tuned BERT NER لاستخراج الكيانات المهيكلة قبل تنفيذ البحث الهجين المتوازي عبر FAISS و BM25.',
+            diagrams: [
+              {
+                id: 'product-discovery-arch',
+                tabLabel: '01. معمارية البحث الهجين',
+                title: '01. استخراج الكيانات (BERT NER) مع البحث المتوازي عبر FAISS و BM25',
+                caption:
+                  'كتالوج المنتجات واستعلامات البحث ← Fine-Tuned BERT (Domain NER) ← بحث متوازٍ عبر FAISS Dense Vector Index و BM25 Sparse Retrieval ← ترتيب النتائج الهجين (تقليل ~70% من نتائج البحث الصفرية).',
+                imageSrc: '/assets/diagrams/product-discovery-hybrid-search.svg',
+                imageAlt:
+                  'مخطط معمارية اكتشاف المنتجات والبحث الهجين من الكتالوج واستعلامات البحث عبر Fine-Tuned BERT NER إلى FAISS و BM25 والترتيب الهجين.',
+                surfaceTone: 'light',
+              },
+            ],
             illustrativeFlow: [
               {
                 stage: '01. استخراج الكيانات (BERT NER)',
@@ -2302,6 +2367,19 @@ export const portfolioContent: Record<Locale, PortfolioLocaleData> = {
           solutionArchitecture: {
             overview:
               'رسوم الحالة في LangGraph تنسق مراحل التفكير والتنفيذ بين الوكلاء، مستندةً إلى الذاكرة الديناميكية والبحث الهجين وتنفيذ الأدوات المهيكلة مع تحسين كفاءة الاستدلال.',
+            diagrams: [
+              {
+                id: 'enterprise-agentic-arch',
+                tabLabel: '01. معمارية الوكلاء',
+                title: '01. معمارية دعم العملاء متعددة الوكلاء الحافظة للحالة (LangGraph)',
+                caption:
+                  'استفسار العميل ← رسم الحالة في LangGraph (الذاكرة الديناميكية، عقد الوكلاء المتخصصة، تحسين الاستدلال) ← Hybrid Vector Search و Structured Tool Calling ← الحل التلقائي (تقليل التصعيد >60%) أو التحويل المنظم للدعم البشري.',
+                imageSrc: '/assets/diagrams/enterprise-agentic-orchestration.svg',
+                imageAlt:
+                  'مخطط معمارية Enterprise Agentic AI يوضح LangGraph والذاكرة الديناميكية والبحث الهجين و Tool Calling وبوابة الحل أو التحويل للبشر.',
+                surfaceTone: 'light',
+              },
+            ],
             illustrativeFlow: [
               {
                 stage: '01. مسار تفكير حافظ للحالة (LangGraph)',

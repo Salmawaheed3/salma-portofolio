@@ -8,7 +8,7 @@ export const Education: React.FC = () => {
   const { education: sectionCopy } = data.ui.sections;
 
   return (
-    <section id="education" className="border-b border-zinc-800/80 py-14 sm:py-20 lg:py-24">
+    <section id="education" className="border-b border-zinc-800/80 py-12 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeader
           index={sectionCopy.index}
@@ -16,30 +16,30 @@ export const Education: React.FC = () => {
           title={sectionCopy.title}
         />
 
-        <div className="grid gap-8 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {/* Education & Community */}
           <div className="min-w-0 space-y-6">
             <div className="space-y-4">
               <div className="flex items-center gap-2 text-sm font-medium text-zinc-300">
-                <GraduationCap className="h-4 w-4 text-emerald-400" aria-hidden="true" />
+                <GraduationCap className="h-4 w-4 shrink-0 text-emerald-400" aria-hidden="true" />
                 <span>{sectionCopy.academicHeading}</span>
               </div>
 
               {data.education.map((edu) => (
                 <div
                   key={edu.id}
-                  className="min-w-0 rounded-xl border border-zinc-800 bg-[#111114] p-5 sm:p-6"
+                  className="min-w-0 rounded-xl border border-zinc-800 bg-[#111114] p-4 sm:p-6"
                 >
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
-                    <h3 className="text-base font-semibold text-zinc-100">
+                    <h3 className="break-words text-sm font-semibold text-zinc-100 sm:text-base">
                       {edu.degreeOrCert}
                     </h3>
                     <span className="font-mono text-xs tabular-nums text-zinc-400">
                       {edu.period}
                     </span>
                   </div>
-                  <p className="mt-1 text-sm text-emerald-400">{edu.institution}</p>
-                  <p className="mt-3 font-mono text-xs tabular-nums text-zinc-300">
+                  <p className="mt-1 break-words text-sm text-emerald-400">{edu.institution}</p>
+                  <p className="mt-3 break-words font-mono text-xs tabular-nums text-zinc-300">
                     {edu.notes}
                   </p>
                 </div>
@@ -48,7 +48,7 @@ export const Education: React.FC = () => {
 
             <div className="space-y-4">
               <div className="flex items-center gap-2 text-sm font-medium text-zinc-300">
-                <Users className="h-4 w-4 text-emerald-400" aria-hidden="true" />
+                <Users className="h-4 w-4 shrink-0 text-emerald-400" aria-hidden="true" />
                 <span>{sectionCopy.communityHeading}</span>
               </div>
 
@@ -56,12 +56,12 @@ export const Education: React.FC = () => {
                 {data.community.map((item) => (
                   <div
                     key={item.id}
-                    className="min-w-0 rounded-xl border border-zinc-800 bg-[#111114] p-5"
+                    className="min-w-0 rounded-xl border border-zinc-800 bg-[#111114] p-4 sm:p-5"
                   >
-                    <h3 className="text-sm font-semibold text-zinc-100">
+                    <h3 className="break-words text-sm font-semibold text-zinc-100">
                       {item.role}
                     </h3>
-                    <p className="mt-1 text-xs text-zinc-400">{item.organization}</p>
+                    <p className="mt-1 break-words text-xs text-zinc-400">{item.organization}</p>
                   </div>
                 ))}
               </div>
@@ -71,7 +71,7 @@ export const Education: React.FC = () => {
           {/* Certifications */}
           <div className="min-w-0 space-y-4">
             <div className="flex items-center gap-2 text-sm font-medium text-zinc-300">
-              <Award className="h-4 w-4 text-emerald-400" aria-hidden="true" />
+              <Award className="h-4 w-4 shrink-0 text-emerald-400" aria-hidden="true" />
               <span>{sectionCopy.certificationsHeading}</span>
             </div>
 
@@ -79,20 +79,20 @@ export const Education: React.FC = () => {
               {data.certifications.map((cert) => (
                 <div
                   key={cert.id}
-                  className="min-w-0 rounded-xl border border-zinc-800 bg-[#111114] p-5"
+                  className="min-w-0 rounded-xl border border-zinc-800 bg-[#111114] p-4 sm:p-5"
                 >
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
-                    <h3 className="text-sm font-semibold text-zinc-100">
+                    <h3 className="break-words text-sm font-semibold text-zinc-100">
                       {cert.degreeOrCert}
                     </h3>
                     <span className="font-mono text-xs tabular-nums text-zinc-400">
                       {cert.period}
                     </span>
                   </div>
-                  <p className="mt-1 text-xs text-emerald-400">
+                  <p className="mt-1 break-words text-xs text-emerald-400">
                     {cert.institution}
                   </p>
-                  <p className="mt-2 text-xs leading-relaxed text-zinc-400">
+                  <p className="mt-2 break-words text-xs leading-relaxed text-zinc-400">
                     {cert.notes}
                   </p>
                 </div>

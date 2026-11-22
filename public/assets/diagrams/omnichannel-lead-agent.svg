@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 696" width="960" height="696" role="img" aria-labelledby="title-omni desc-omni">
+  <title id="title-omni">Omnichannel Lead Agent — System Architecture</title>
+  <desc id="desc-omni">Conversations from Facebook, WhatsApp, and Instagram enter automated FAQ replies and lead qualification, syncing qualified leads into Odoo CRM and generating draft quotations held for human pricing review.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#64748B" />
+    </marker>
+    <marker id="arrow-emerald" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#059669" />
+    </marker>
+    <style>
+      .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+    </style>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="960" height="696" fill="#FAFBFD" rx="8" />
+
+  <!-- Title -->
+  <text x="480" y="34" text-anchor="middle" class="sans" font-size="16" font-weight="600" fill="#0F172A">Omnichannel Lead Agent — Intake, Qualification &amp; Odoo CRM Workflow</text>
+
+  <!-- Layer 1: Messaging Channels -->
+  <rect x="48" y="54" width="864" height="106" rx="10" fill="#F4F5F7" stroke="#E2E8F0" stroke-width="1.2" />
+  <text x="68" y="76" text-anchor="start" class="sans" font-size="12" font-weight="600" fill="#475569">01. Messaging Channels (Omnichannel Intake)</text>
+
+  <rect x="96" y="92" width="220" height="50" rx="10" fill="#E8F2FC" stroke="#93C5FD" stroke-width="1.3" />
+  <text x="206" y="122" text-anchor="middle" class="sans" font-size="13.5" font-weight="600" fill="#0F4C81">Facebook</text>
+
+  <rect x="370" y="92" width="220" height="50" rx="10" fill="#E8F2FC" stroke="#93C5FD" stroke-width="1.3" />
+  <text x="480" y="122" text-anchor="middle" class="sans" font-size="13.5" font-weight="600" fill="#0F4C81">WhatsApp</text>
+
+  <rect x="644" y="92" width="220" height="50" rx="10" fill="#E8F2FC" stroke="#93C5FD" stroke-width="1.3" />
+  <text x="754" y="122" text-anchor="middle" class="sans" font-size="13.5" font-weight="600" fill="#0F4C81">Instagram</text>
+
+  <!-- Arrows Layer 1 -> Layer 2 -->
+  <path d="M 206 142 L 206 172 L 410 172 L 410 212" fill="none" stroke="#64748B" stroke-width="1.4" marker-end="url(#arrow)" />
+  <path d="M 480 142 L 480 212" fill="none" stroke="#64748B" stroke-width="1.4" marker-end="url(#arrow)" />
+  <path d="M 754 142 L 754 172 L 550 172 L 550 212" fill="none" stroke="#64748B" stroke-width="1.4" marker-end="url(#arrow)" />
+
+  <!-- Layer 2: AI Intake & Qualification -->
+  <rect x="48" y="188" width="864" height="176" rx="10" fill="#F4F5F7" stroke="#E2E8F0" stroke-width="1.2" />
+  <text x="68" y="210" text-anchor="start" class="sans" font-size="12" font-weight="600" fill="#475569">02. Automated Intake &amp; Qualification</text>
+
+  <rect x="300" y="218" width="360" height="54" rx="10" fill="#E8F2FC" stroke="#93C5FD" stroke-width="1.4" />
+  <text x="480" y="242" text-anchor="middle" class="sans" font-size="13.5" font-weight="600" fill="#0F4C81">Unified Inquiry Triage &amp; FAQ Replies</text>
+  <text x="480" y="260" text-anchor="middle" class="sans" font-size="11" fill="#3B6EA5">Answers common questions automatically across channels</text>
+
+  <line x1="480" y1="272" x2="480" y2="292" stroke="#64748B" stroke-width="1.4" marker-end="url(#arrow)" />
+
+  <rect x="300" y="298" width="360" height="54" rx="10" fill="#EEF2FF" stroke="#A5B4FC" stroke-width="1.4" />
+  <text x="480" y="322" text-anchor="middle" class="sans" font-size="13.5" font-weight="600" fill="#312E81">Lead Qualification Filter</text>
+  <text x="480" y="340" text-anchor="middle" class="sans" font-size="11" fill="#4338CA">Separates genuine buyers from casual inquiries</text>
+
+  <!-- Branch Left: Casual Inquiry -->
+  <path d="M 300 325 L 154 325 L 154 422" fill="none" stroke="#64748B" stroke-width="1.4" marker-end="url(#arrow)" />
+  <text x="226" y="316" text-anchor="middle" class="mono" font-size="10.5" fill="#64748B">Casual Question</text>
+
+  <rect x="52" y="428" width="212" height="72" rx="10" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.3" />
+  <text x="158" y="459" text-anchor="middle" class="sans" font-size="13" font-weight="600" fill="#1E293B">Resolved FAQ Reply</text>
+  <text x="158" y="478" text-anchor="middle" class="sans" font-size="11" fill="#475569">Closed cleanly without staff effort</text>
+
+  <!-- Branch Right / Down: Qualified Lead -->
+  <path d="M 480 352 L 480 422" fill="none" stroke="#059669" stroke-width="1.6" marker-end="url(#arrow-emerald)" />
+  <rect x="424" y="368" width="112" height="20" rx="4" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1" />
+  <text x="480" y="382" text-anchor="middle" class="mono" font-size="10.5" font-weight="600" fill="#059669">Qualified Lead</text>
+
+  <!-- Layer 3: CRM & Quotation Layer -->
+  <rect x="304" y="396" width="608" height="224" rx="10" fill="#F4F5F7" stroke="#E2E8F0" stroke-width="1.2" />
+  <text x="324" y="416" text-anchor="start" class="sans" font-size="12" font-weight="600" fill="#475569">03. CRM Sync &amp; Quotation Pipeline</text>
+
+  <!-- Odoo CRM Box -->
+  <rect x="330" y="428" width="260" height="74" rx="10" fill="#E8F2FC" stroke="#93C5FD" stroke-width="1.4" />
+  <text x="460" y="456" text-anchor="middle" class="sans" font-size="13.5" font-weight="600" fill="#0F4C81">Odoo CRM Auto-Sync</text>
+  <text x="460" y="475" text-anchor="middle" class="sans" font-size="11" fill="#3B6EA5">Auto-creates &amp; updates lead records</text>
+  <text x="460" y="491" text-anchor="middle" class="sans" font-size="11" fill="#3B6EA5">Unified cross-channel visibility</text>
+
+  <!-- Draft Quotation Box -->
+  <rect x="634" y="428" width="256" height="74" rx="10" fill="#E8F2FC" stroke="#93C5FD" stroke-width="1.4" />
+  <text x="762" y="456" text-anchor="middle" class="sans" font-size="13.5" font-weight="600" fill="#0F4C81">Draft Price Quotation</text>
+  <text x="762" y="475" text-anchor="middle" class="sans" font-size="11" fill="#3B6EA5">Prepares tailored draft quote</text>
+  <text x="762" y="491" text-anchor="middle" class="sans" font-size="11" fill="#3B6EA5">for every qualified prospect</text>
+
+  <!-- Arrow Odoo -> Draft Quote -->
+  <line x1="590" y1="465" x2="628" y2="465" stroke="#64748B" stroke-width="1.4" marker-end="url(#arrow)" />
+
+  <!-- Arrow Draft Quote -> Human Review -->
+  <line x1="762" y1="502" x2="762" y2="530" stroke="#64748B" stroke-width="1.4" marker-end="url(#arrow)" />
+
+  <!-- Human-in-the-Loop Pricing Checkpoint -->
+  <rect x="330" y="536" width="560" height="68" rx="10" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.5" />
+  <text x="610" y="563" text-anchor="middle" class="sans" font-size="13.5" font-weight="600" fill="#92400E">Human-in-the-Loop Pricing Review Checkpoint</text>
+  <text x="610" y="583" text-anchor="middle" class="sans" font-size="11.5" fill="#B45309">Workflow pauses so sales staff set final pricing &amp; approve before dispatch</text>
+
+  <!-- Footer Outcome Bar -->
+  <rect x="48" y="638" width="864" height="40" rx="8" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1.2" />
+  <text x="480" y="663" text-anchor="middle" class="mono" font-size="12" font-weight="600" fill="#065F46">+40% Qualified Leads  ·  Zero Missed Leads Across Channels  ·  Full Human Control Over Pricing</text>
+</svg>

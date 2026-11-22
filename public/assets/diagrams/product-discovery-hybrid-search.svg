@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 632" width="960" height="632" role="img" aria-labelledby="title-search desc-search">
+  <title id="title-search">Product Discovery &amp; Hybrid Search Optimization — Architecture</title>
+  <desc id="desc-search">Unstructured product catalog entries and incoming shopper queries pass through fine-tuned BERT NER for entity extraction prior to parallel FAISS dense vector search, BM25 sparse retrieval, and hybrid ranking output.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#64748B" />
+    </marker>
+    <marker id="arrow-emerald" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#059669" />
+    </marker>
+    <style>
+      .sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+    </style>
+  </defs>
+
+  <!-- Canvas -->
+  <rect width="960" height="632" fill="#FAFBFD" rx="8" />
+
+  <!-- Title -->
+  <text x="480" y="34" text-anchor="middle" class="sans" font-size="16" font-weight="600" fill="#0F172A">Product Discovery &amp; Hybrid Search — Domain NER + FAISS + BM25 Architecture</text>
+
+  <!-- Layer 1: Inputs -->
+  <rect x="64" y="56" width="832" height="96" rx="10" fill="#F4F5F7" stroke="#E2E8F0" stroke-width="1.2" />
+  <text x="84" y="78" text-anchor="start" class="sans" font-size="12" font-weight="600" fill="#475569">01. Catalog &amp; Query Inputs</text>
+
+  <rect x="116" y="90" width="314" height="46" rx="10" fill="#F1F5F9" stroke="#CBD5E1" stroke-width="1.3" />
+  <text x="273" y="118" text-anchor="middle" class="sans" font-size="13.5" font-weight="600" fill="#1E293B">Unstructured Product Catalog</text>
+
+  <rect x="530" y="90" width="314" height="46" rx="10" fill="#E8F2FC" stroke="#93C5FD" stroke-width="1.3" />
+  <text x="687" y="118" text-anchor="middle" class="sans" font-size="13.5" font-weight="600" fill="#0F4C81">Shopper Search Queries</text>
+
+  <!-- Arrows Inputs -> BERT NER -->
+  <path d="M 273 136 L 273 162 L 420 162 L 420 202" fill="none" stroke="#64748B" stroke-width="1.4" marker-end="url(#arrow)" />
+  <path d="M 687 136 L 687 162 L 540 162 L 540 202" fill="none" stroke="#64748B" stroke-width="1.4" marker-end="url(#arrow)" />
+
+  <!-- Layer 2: Product Understanding -->
+  <rect x="64" y="178" width="832" height="114" rx="10" fill="#F4F5F7" stroke="#E2E8F0" stroke-width="1.2" />
+  <text x="84" y="198" text-anchor="start" class="sans" font-size="12" font-weight="600" fill="#475569">02. Product Understanding Layer</text>
+
+  <rect x="220" y="208" width="520" height="66" rx="10" fill="#EEF2FF" stroke="#A5B4FC" stroke-width="1.5" />
+  <text x="480" y="236" text-anchor="middle" class="sans" font-size="14" font-weight="600" fill="#312E81">Fine-Tuned BERT (Domain-Specific NER)</text>
+  <text x="480" y="257" text-anchor="middle" class="sans" font-size="11.5" fill="#4338CA">Extracts explicit product entities, brands, model codes &amp; attributes</text>
+
+  <!-- Split Arrows BERT -> Parallel Retrieval Arms -->
+  <path d="M 400 274 L 400 300 L 273 300 L 273 340" fill="none" stroke="#64748B" stroke-width="1.4" marker-end="url(#arrow)" />
+  <path d="M 560 274 L 560 300 L 687 300 L 687 340" fill="none" stroke="#64748B" stroke-width="1.4" marker-end="url(#arrow)" />
+
+  <!-- Layer 3: Hybrid Retrieval -->
+  <rect x="64" y="314" width="832" height="138" rx="10" fill="#F4F5F7" stroke="#E2E8F0" stroke-width="1.2" />
+  <text x="84" y="334" text-anchor="start" class="sans" font-size="12" font-weight="600" fill="#475569">03. Parallel Hybrid Retrieval Layer</text>
+
+  <!-- FAISS Arm -->
+  <rect x="108" y="346" width="330" height="86" rx="10" fill="#E8F2FC" stroke="#93C5FD" stroke-width="1.4" />
+  <text x="273" y="378" text-anchor="middle" class="sans" font-size="14" font-weight="600" fill="#0F4C81">FAISS Dense Vector Index</text>
+  <text x="273" y="398" text-anchor="middle" class="sans" font-size="11.5" fill="#3B6EA5">Captures semantic intent &amp; synonym phrasing</text>
+  <text x="273" y="416" text-anchor="middle" class="mono" font-size="10.5" fill="#3B6EA5">Dense Vector Similarity Search</text>
+
+  <!-- BM25 Arm -->
+  <rect x="522" y="346" width="330" height="86" rx="10" fill="#E8F2FC" stroke="#93C5FD" stroke-width="1.4" />
+  <text x="687" y="378" text-anchor="middle" class="sans" font-size="14" font-weight="600" fill="#0F4C81">BM25 Sparse Retrieval</text>
+  <text x="687" y="398" text-anchor="middle" class="sans" font-size="11.5" fill="#3B6EA5">Guarantees exact SKU, model &amp; attribute match</text>
+  <text x="687" y="416" text-anchor="middle" class="mono" font-size="10.5" fill="#3B6EA5">Sparse Lexical Matching</text>
+
+  <!-- Merge Arrows -> Ranking Output -->
+  <path d="M 273 432 L 273 464 L 420 464 L 420 486" fill="none" stroke="#059669" stroke-width="1.5" marker-end="url(#arrow-emerald)" />
+  <path d="M 687 432 L 687 464 L 540 464 L 540 486" fill="none" stroke="#059669" stroke-width="1.5" marker-end="url(#arrow-emerald)" />
+
+  <!-- Layer 4: Hybrid Ranking Output -->
+  <rect x="220" y="492" width="520" height="66" rx="10" fill="#E8F2FC" stroke="#60A5FA" stroke-width="1.5" />
+  <text x="480" y="520" text-anchor="middle" class="sans" font-size="14" font-weight="600" fill="#0F4C81">Hybrid Ranking &amp; Matched In-Stock Results</text>
+  <text x="480" y="540" text-anchor="middle" class="sans" font-size="11.5" fill="#3B6EA5">Unifies semantic recall with exact lexical precision to prevent dead ends</text>
+
+  <!-- Footer Outcome Bar -->
+  <rect x="64" y="576" width="832" height="40" rx="8" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="1.2" />
+  <text x="480" y="601" text-anchor="middle" class="mono" font-size="12" font-weight="600" fill="#065F46">~70% Fewer Zero-Result Queries  ·  Higher Recall &amp; Precision  ·  Lost Searches Converted to Sales</text>
+</svg>

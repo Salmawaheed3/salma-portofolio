@@ -21,7 +21,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
       : data.projects.filter((p) => p.categoryId === activeCategory);
 
   return (
-    <section id="projects" className="border-b border-zinc-800/80 py-14 sm:py-20 lg:py-24">
+    <section id="projects" className="border-b border-zinc-800/80 py-12 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end md:gap-6">
           <div className="min-w-0 [&>div]:mb-2 md:[&>div]:mb-12">
@@ -47,7 +47,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                   role="tab"
                   aria-selected={active}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`min-h-[36px] flex-1 sm:flex-initial whitespace-nowrap shrink-0 rounded-md px-3 py-1.5 font-mono text-xs transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
+                  className={`min-h-[36px] flex-1 sm:flex-initial whitespace-nowrap shrink-0 rounded-md px-2.5 py-1.5 font-mono text-[11px] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 sm:px-3 sm:text-xs ${
                     active
                       ? 'bg-zinc-100 text-zinc-950 font-medium'
                       : 'text-zinc-400 hover:text-zinc-100'
@@ -60,7 +60,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
           </div>
         </div>
 
-        <div className="grid gap-5 sm:gap-6 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2">
           {filteredProjects.map((project, idx) => {
             const diagramCount =
               project.story.solutionArchitecture.diagrams?.length ?? 0;
@@ -76,7 +76,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                   delay: idx * 0.04,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="group relative flex min-w-0 flex-col justify-between rounded-xl border border-zinc-800 bg-[#111114] p-5 transition-colors duration-150 hover:border-emerald-500/50 sm:p-6"
+                className="group relative flex min-w-0 flex-col justify-between rounded-xl border border-zinc-800 bg-[#111114] p-4 transition-colors duration-150 hover:border-emerald-500/50 sm:p-6"
               >
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-xs text-zinc-400">
@@ -93,28 +93,28 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                     )}
                   </div>
 
-                  <h3 className="mt-3 break-words text-lg font-semibold text-zinc-100 group-hover:text-white">
+                  <h3 className="mt-2.5 break-words text-base font-semibold text-zinc-100 group-hover:text-white sm:mt-3 sm:text-lg">
                     {project.title}
                   </h3>
-                  <p className="mt-0.5 break-words text-sm font-medium text-zinc-400">
+                  <p className="mt-0.5 break-words text-xs font-medium text-zinc-400 sm:text-sm">
                     {project.subtitle}
                   </p>
 
                   {project.highlightMetric && (
-                    <p className="mt-3 break-words font-mono text-xs font-medium tabular-nums text-emerald-400">
+                    <p className="mt-2.5 break-words font-mono text-xs font-medium tabular-nums text-emerald-400 sm:mt-3">
                       {project.highlightMetric}
                     </p>
                   )}
 
-                  <p className="mt-3 text-sm leading-relaxed text-zinc-400">
+                  <p className="mt-2.5 break-words text-sm leading-relaxed text-zinc-400 sm:mt-3">
                     {project.summary}
                   </p>
                 </div>
 
-                <div className="mt-6 min-w-0 border-t border-zinc-800/80 pt-4">
+                <div className="mt-5 min-w-0 border-t border-zinc-800/80 pt-4 sm:mt-6">
                   <p
                     dir="ltr"
-                    className="mb-4 break-words font-mono text-xs leading-relaxed text-zinc-500 rtl:text-right"
+                    className="mb-3.5 break-words font-mono text-xs leading-relaxed text-zinc-500 sm:mb-4 rtl:text-right"
                   >
                     {project.tags.join(' · ')}
                   </p>
