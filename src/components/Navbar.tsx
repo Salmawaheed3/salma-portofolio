@@ -33,12 +33,12 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigateSection }) => {
 
   return (
     <header className="sticky top-0 z-40 border-b border-zinc-800/80 bg-[#09090B]/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-6 py-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3.5 sm:gap-6 sm:px-6 sm:py-4">
         {/* Zone 1: Brand Wordmark */}
         <a
           href="#top"
           onClick={(e) => handleLinkClick(e, '#top')}
-          className="whitespace-nowrap shrink-0 font-display text-base font-semibold tracking-tight text-zinc-100 transition-colors hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded-sm"
+          className="min-w-0 truncate font-display text-sm font-semibold tracking-tight text-zinc-100 transition-colors hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded-sm sm:text-base"
         >
           {data.profile.name}
         </a>
@@ -60,9 +60,9 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigateSection }) => {
           ))}
         </nav>
 
-        {/* Zone 3: Top Social/Contact Icons + Primary Action + Mobile Menu Button */}
-        <div className="flex items-center gap-2.5 shrink-0">
-          <div className="flex items-center gap-1.5">
+        {/* Zone 3: Top Social/Contact Icons + Mobile Menu Button */}
+        <div className="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+          <div className="flex items-center gap-1 sm:gap-1.5">
             <a
               href={contact.linkedinUrl}
               target="_blank"
@@ -98,7 +98,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigateSection }) => {
             onClick={() => setMobileOpen((prev) => !prev)}
             aria-expanded={mobileOpen}
             aria-label={mobileOpen ? nav.closeMenu : nav.openMenu}
-            className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-zinc-800 text-zinc-300 transition-colors hover:border-zinc-700 hover:text-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 lg:hidden"
+            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-zinc-800 text-zinc-300 transition-colors hover:border-zinc-700 hover:text-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 sm:h-10 sm:w-10 lg:hidden"
           >
             {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -108,7 +108,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigateSection }) => {
       {mobileOpen && (
         <nav
           aria-label="Mobile Navigation"
-          className="border-t border-zinc-800 bg-[#09090B] px-6 py-4 lg:hidden"
+          className="border-t border-zinc-800 bg-[#09090B] px-4 py-3 sm:px-6 sm:py-4 lg:hidden"
         >
           <div className="flex flex-col space-y-1">
             {navLinks.map((link) => (
@@ -116,7 +116,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onNavigateSection }) => {
                 key={link.href}
                 href={link.href}
                 onClick={(e) => handleLinkClick(e, link.href)}
-                className="flex min-h-[44px] items-center text-sm text-zinc-300 transition-colors hover:text-zinc-100"
+                className="flex min-h-[44px] items-center rounded-md px-2 text-sm text-zinc-300 transition-colors hover:bg-zinc-900 hover:text-zinc-100"
               >
                 {link.label}
               </a>

@@ -21,20 +21,22 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
       : data.projects.filter((p) => p.categoryId === activeCategory);
 
   return (
-    <section id="projects" className="border-b border-zinc-800/80 py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-          <SectionHeader
-            index={sectionCopy.index}
-            eyebrow={sectionCopy.eyebrow}
-            title={sectionCopy.title}
-            description={sectionCopy.description}
-          />
+    <section id="projects" className="border-b border-zinc-800/80 py-14 sm:py-20 lg:py-24">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="flex flex-col justify-between gap-4 md:flex-row md:items-end md:gap-6">
+          <div className="min-w-0 [&>div]:mb-2 md:[&>div]:mb-12">
+            <SectionHeader
+              index={sectionCopy.index}
+              eyebrow={sectionCopy.eyebrow}
+              title={sectionCopy.title}
+              description={sectionCopy.description}
+            />
+          </div>
 
           <div
             role="tablist"
             aria-label={sectionCopy.filterLabel}
-            className="mb-12 inline-flex flex-wrap items-center gap-1 rounded-lg border border-zinc-800 bg-[#111114] p-1"
+            className="mb-8 flex w-full flex-wrap items-center gap-1 rounded-lg border border-zinc-800 bg-[#111114] p-1 sm:w-fit md:mb-12"
           >
             {sectionCopy.categories.map((category) => {
               const active = activeCategory === category.id;
@@ -45,7 +47,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                   role="tab"
                   aria-selected={active}
                   onClick={() => setActiveCategory(category.id)}
-                  className={`min-h-[36px] whitespace-nowrap shrink-0 rounded-md px-3 py-1.5 font-mono text-xs transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
+                  className={`min-h-[36px] flex-1 sm:flex-initial whitespace-nowrap shrink-0 rounded-md px-3 py-1.5 font-mono text-xs transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
                     active
                       ? 'bg-zinc-100 text-zinc-950 font-medium'
                       : 'text-zinc-400 hover:text-zinc-100'
@@ -58,7 +60,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
           </div>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-5 sm:gap-6 md:grid-cols-2">
           {filteredProjects.map((project, idx) => {
             const diagramCount =
               project.story.solutionArchitecture.diagrams?.length ?? 0;
@@ -74,13 +76,13 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                   delay: idx * 0.04,
                   ease: [0.16, 1, 0.3, 1],
                 }}
-                className="group relative flex flex-col justify-between rounded-xl border border-zinc-800 bg-[#111114] p-6 transition-colors duration-150 hover:border-emerald-500/50"
+                className="group relative flex min-w-0 flex-col justify-between rounded-xl border border-zinc-800 bg-[#111114] p-5 transition-colors duration-150 hover:border-emerald-500/50 sm:p-6"
               >
-                <div>
-                  <div className="flex flex-wrap items-center gap-2 font-mono text-xs text-zinc-400">
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-xs text-zinc-400">
                     <span className="text-emerald-400">{project.categoryLabel}</span>
                     <span aria-hidden="true" className="text-zinc-700">·</span>
-                    <span>{project.company}</span>
+                    <span className="break-words">{project.company}</span>
                     {diagramCount > 0 && (
                       <>
                         <span aria-hidden="true" className="text-zinc-700">·</span>
@@ -91,15 +93,15 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                     )}
                   </div>
 
-                  <h3 className="mt-3 text-lg font-semibold text-zinc-100 group-hover:text-white">
+                  <h3 className="mt-3 break-words text-lg font-semibold text-zinc-100 group-hover:text-white">
                     {project.title}
                   </h3>
-                  <p className="mt-0.5 text-sm font-medium text-zinc-400">
+                  <p className="mt-0.5 break-words text-sm font-medium text-zinc-400">
                     {project.subtitle}
                   </p>
 
                   {project.highlightMetric && (
-                    <p className="mt-3 font-mono text-xs font-medium tabular-nums text-emerald-400">
+                    <p className="mt-3 break-words font-mono text-xs font-medium tabular-nums text-emerald-400">
                       {project.highlightMetric}
                     </p>
                   )}
@@ -109,10 +111,10 @@ export const Projects: React.FC<ProjectsProps> = ({ onSelectProject }) => {
                   </p>
                 </div>
 
-                <div className="mt-6 border-t border-zinc-800/80 pt-4">
+                <div className="mt-6 min-w-0 border-t border-zinc-800/80 pt-4">
                   <p
                     dir="ltr"
-                    className="mb-4 font-mono text-xs leading-relaxed text-zinc-500 rtl:text-right"
+                    className="mb-4 break-words font-mono text-xs leading-relaxed text-zinc-500 rtl:text-right"
                   >
                     {project.tags.join(' · ')}
                   </p>

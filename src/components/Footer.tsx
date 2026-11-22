@@ -22,37 +22,37 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection }) => {
 
   return (
     <footer className="border-t border-zinc-800/80 py-8">
-      <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 px-6 text-xs text-zinc-500 sm:flex-row sm:items-center">
+      <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-4 px-4 text-xs text-zinc-500 sm:px-6 md:flex-row md:items-center">
         <span>
           © {year} {data.profile.name} · {data.profile.title}
         </span>
 
-        <div className="flex flex-wrap items-center gap-6">
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 sm:gap-x-6">
           <a
             href="#about"
             onClick={(e) => handleLinkClick(e, '#about')}
-            className="transition-colors hover:text-zinc-300"
+            className="inline-flex min-h-[32px] items-center transition-colors hover:text-zinc-300"
           >
             {footer.philosophy}
           </a>
           <a
             href="#projects"
             onClick={(e) => handleLinkClick(e, '#projects')}
-            className="transition-colors hover:text-zinc-300"
+            className="inline-flex min-h-[32px] items-center transition-colors hover:text-zinc-300"
           >
             {footer.caseStudies}
           </a>
           <a
             href="#experience"
             onClick={(e) => handleLinkClick(e, '#experience')}
-            className="transition-colors hover:text-zinc-300"
+            className="inline-flex min-h-[32px] items-center transition-colors hover:text-zinc-300"
           >
             {footer.experience}
           </a>
           <a
             href="#contact"
             onClick={(e) => handleLinkClick(e, '#contact')}
-            className="transition-colors hover:text-zinc-300"
+            className="inline-flex min-h-[32px] items-center transition-colors hover:text-zinc-300"
           >
             {footer.contact}
           </a>
@@ -64,7 +64,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection }) => {
               type="button"
               onClick={() => setLocale('en')}
               aria-pressed={locale === 'en'}
-              className={`transition-colors ${
+              className={`min-h-[32px] px-1 transition-colors ${
                 locale === 'en' ? 'font-medium text-emerald-400' : 'hover:text-zinc-300'
               }`}
             >
@@ -75,7 +75,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateSection }) => {
               type="button"
               onClick={() => setLocale('ar')}
               aria-pressed={locale === 'ar'}
-              className={`transition-colors ${
+              className={`min-h-[32px] px-1 transition-colors ${
                 locale === 'ar' ? 'font-medium text-emerald-400' : 'hover:text-zinc-300'
               }`}
             >

@@ -14,8 +14,8 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
   description,
 }) => {
   return (
-    <div className="mb-12 max-w-2xl">
-      <div className="mb-3 flex items-center gap-3 text-sm font-medium text-zinc-400">
+    <div className="mb-8 max-w-2xl sm:mb-12">
+      <div className="mb-2.5 flex items-center gap-3 text-sm font-medium text-zinc-400 sm:mb-3">
         <span className="font-mono tabular-nums text-emerald-400">{index}</span>
         <span aria-hidden="true" className="text-zinc-700">/</span>
         <span>{eyebrow}</span>
@@ -24,7 +24,7 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
         {title}
       </h2>
       {description && (
-        <p className="mt-3 text-base leading-relaxed text-zinc-400">
+        <p className="mt-2.5 text-sm leading-relaxed text-zinc-400 sm:mt-3 sm:text-base">
           {description}
         </p>
       )}

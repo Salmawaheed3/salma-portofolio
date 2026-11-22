@@ -8,8 +8,8 @@ export const Education: React.FC = () => {
   const { education: sectionCopy } = data.ui.sections;
 
   return (
-    <section id="education" className="border-b border-zinc-800/80 py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="education" className="border-b border-zinc-800/80 py-14 sm:py-20 lg:py-24">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeader
           index={sectionCopy.index}
           eyebrow={sectionCopy.eyebrow}
@@ -18,7 +18,7 @@ export const Education: React.FC = () => {
 
         <div className="grid gap-8 lg:grid-cols-2">
           {/* Education & Community */}
-          <div className="space-y-6">
+          <div className="min-w-0 space-y-6">
             <div className="space-y-4">
               <div className="flex items-center gap-2 text-sm font-medium text-zinc-300">
                 <GraduationCap className="h-4 w-4 text-emerald-400" aria-hidden="true" />
@@ -28,7 +28,7 @@ export const Education: React.FC = () => {
               {data.education.map((edu) => (
                 <div
                   key={edu.id}
-                  className="rounded-xl border border-zinc-800 bg-[#111114] p-6"
+                  className="min-w-0 rounded-xl border border-zinc-800 bg-[#111114] p-5 sm:p-6"
                 >
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
                     <h3 className="text-base font-semibold text-zinc-100">
@@ -56,7 +56,7 @@ export const Education: React.FC = () => {
                 {data.community.map((item) => (
                   <div
                     key={item.id}
-                    className="rounded-xl border border-zinc-800 bg-[#111114] p-5"
+                    className="min-w-0 rounded-xl border border-zinc-800 bg-[#111114] p-5"
                   >
                     <h3 className="text-sm font-semibold text-zinc-100">
                       {item.role}
@@ -69,7 +69,7 @@ export const Education: React.FC = () => {
           </div>
 
           {/* Certifications */}
-          <div className="space-y-4">
+          <div className="min-w-0 space-y-4">
             <div className="flex items-center gap-2 text-sm font-medium text-zinc-300">
               <Award className="h-4 w-4 text-emerald-400" aria-hidden="true" />
               <span>{sectionCopy.certificationsHeading}</span>
@@ -79,7 +79,7 @@ export const Education: React.FC = () => {
               {data.certifications.map((cert) => (
                 <div
                   key={cert.id}
-                  className="rounded-xl border border-zinc-800 bg-[#111114] p-5"
+                  className="min-w-0 rounded-xl border border-zinc-800 bg-[#111114] p-5"
                 >
                   <div className="flex flex-wrap items-baseline justify-between gap-2">
                     <h3 className="text-sm font-semibold text-zinc-100">

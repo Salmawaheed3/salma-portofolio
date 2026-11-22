@@ -110,7 +110,7 @@ const AppShell: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-[#09090B] text-zinc-100">
+    <div className="min-h-screen overflow-x-clip bg-[#09090B] text-zinc-100">
       <Navbar onNavigateSection={navigateToSection} />
       <main>
         {activeProject ? (

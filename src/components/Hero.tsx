@@ -12,12 +12,12 @@ export const Hero: React.FC = () => {
   return (
     <section
       id="top"
-      className="border-b border-zinc-800/80 py-16 sm:py-24 lg:py-28"
+      className="border-b border-zinc-800/80 py-10 sm:py-20 lg:py-28"
     >
-      <div className="mx-auto max-w-6xl px-6">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
         {/* Top Metadata & Language Switcher Row */}
-        <div className="mb-10 flex flex-wrap items-center justify-between gap-4">
-          <p className="flex flex-wrap items-center gap-2 text-sm font-medium text-emerald-400">
+        <div className="mb-8 flex flex-wrap items-center justify-between gap-3 sm:mb-10 sm:gap-4">
+          <p className="min-w-0 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-medium text-emerald-400 sm:text-sm">
             <span>{profile.title}</span>
             <span aria-hidden="true" className="text-zinc-600">·</span>
             <span className="text-zinc-400">{profile.location}</span>
@@ -26,14 +26,14 @@ export const Hero: React.FC = () => {
           <div
             role="group"
             aria-label={ui.hero.languageLabel}
-            className="inline-flex items-center gap-1 rounded-lg border border-zinc-800 bg-[#111114] p-1"
+            className="inline-flex items-center gap-1 rounded-lg border border-zinc-800 bg-[#111114] p-1 shrink-0"
           >
-            <Globe className="mx-2 h-3.5 w-3.5 text-zinc-400" aria-hidden="true" />
+            <Globe className="mx-1.5 h-3.5 w-3.5 text-zinc-400 sm:mx-2" aria-hidden="true" />
             <button
               type="button"
               onClick={() => setLocale('en')}
               aria-pressed={locale === 'en'}
-              className={`min-h-[34px] whitespace-nowrap shrink-0 rounded-md px-3 py-1 text-xs font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
+              className={`min-h-[34px] whitespace-nowrap shrink-0 rounded-md px-2.5 py-1 text-xs font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 sm:px-3 ${
                 locale === 'en'
                   ? 'bg-zinc-100 text-zinc-950'
                   : 'text-zinc-400 hover:text-zinc-100'
@@ -45,7 +45,7 @@ export const Hero: React.FC = () => {
               type="button"
               onClick={() => setLocale('ar')}
               aria-pressed={locale === 'ar'}
-              className={`min-h-[34px] whitespace-nowrap shrink-0 rounded-md px-3 py-1 text-xs font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 ${
+              className={`min-h-[34px] whitespace-nowrap shrink-0 rounded-md px-2.5 py-1 text-xs font-medium transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 sm:px-3 ${
                 locale === 'ar'
                   ? 'bg-zinc-100 text-zinc-950'
                   : 'text-zinc-400 hover:text-zinc-100'
@@ -57,25 +57,25 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Split Hero: Typographic Hierarchy + Portrait */}
-        <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
+        <div className="grid items-center gap-8 sm:gap-10 lg:grid-cols-12 lg:gap-12">
           <motion.div
             key={locale}
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            className="flex flex-col justify-center lg:col-span-7"
+            className="flex min-w-0 flex-col justify-center lg:col-span-7"
           >
-            <h1 className="text-balance text-4xl font-semibold tracking-tight text-zinc-50 sm:text-5xl lg:text-6xl">
+            <h1 className="text-balance text-3xl font-semibold tracking-tight text-zinc-50 sm:text-5xl lg:text-6xl">
               {profile.name}
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-300 sm:text-xl">
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-300 sm:mt-6 sm:text-xl">
               {profile.positioningStatement}
             </p>
 
             <p
               dir="ltr"
-              className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1.5 font-mono text-xs text-zinc-400 rtl:justify-end"
+              className="mt-5 flex flex-wrap items-center gap-x-2.5 gap-y-1.5 font-mono text-[11px] text-zinc-400 sm:mt-6 sm:gap-x-3 sm:text-xs rtl:justify-end"
             >
               {profile.heroHighlights.map((item, idx) => (
                 <React.Fragment key={item}>
@@ -87,7 +87,7 @@ export const Hero: React.FC = () => {
               ))}
             </p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-4">
+            <div className="mt-8 flex flex-wrap items-center gap-3 sm:mt-10 sm:gap-4">
               <a
                 href="#projects"
                 className="inline-flex min-h-[44px] items-center gap-2 whitespace-nowrap shrink-0 rounded-md bg-zinc-100 px-5 py-2.5 text-sm font-medium text-zinc-950 transition-colors duration-150 hover:bg-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
@@ -134,11 +134,11 @@ export const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.25, ease: 'easeOut' }}
-            className="lg:col-span-5 lg:flex lg:justify-end"
+            className="min-w-0 lg:col-span-5 lg:flex lg:justify-end"
           >
-            <div className="relative mx-auto aspect-square w-full max-w-[360px] overflow-hidden rounded-2xl border border-zinc-800 bg-[#111114] lg:mx-0 lg:max-w-[410px]">
+            <div className="relative mx-auto aspect-square w-full max-w-[280px] overflow-hidden rounded-2xl border border-zinc-800 bg-[#111114] sm:max-w-[360px] lg:mx-0 lg:max-w-[410px]">
               {imgError ? (
-                <div className="flex h-full min-h-[300px] flex-col items-center justify-center gap-3 p-8 text-zinc-500">
+                <div className="flex h-full min-h-[260px] flex-col items-center justify-center gap-3 p-8 text-zinc-500">
                   <User className="h-10 w-10 text-zinc-600" aria-hidden="true" />
                   <span className="text-sm font-medium text-zinc-400">
                     {profile.name}
@@ -163,9 +163,9 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Verified impact strip anchored directly below hero */}
-        <div className="mt-16 grid gap-6 border-t border-zinc-800/80 pt-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid grid-cols-1 gap-5 border-t border-zinc-800/80 pt-8 sm:mt-16 sm:grid-cols-2 sm:gap-6 sm:pt-10 lg:grid-cols-4">
           {heroMetrics.map((item) => (
-            <div key={item.id}>
+            <div key={item.id} className="min-w-0">
               <div
                 dir="ltr"
                 className="inline-block font-mono text-2xl font-semibold tabular-nums text-emerald-400"

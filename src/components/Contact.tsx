@@ -20,8 +20,8 @@ export const Contact: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="contact" className="py-14 sm:py-20 lg:py-24">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <SectionHeader
           index={sectionCopy.index}
           eyebrow={sectionCopy.eyebrow}
@@ -29,10 +29,10 @@ export const Contact: React.FC = () => {
           description={contact.subtext}
         />
 
-        <div className="grid gap-4 sm:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-3">
           {/* Email */}
-          <div className="flex flex-col justify-between rounded-xl border border-zinc-800 bg-[#111114] p-6">
-            <div>
+          <div className="flex min-w-0 flex-col justify-between rounded-xl border border-zinc-800 bg-[#111114] p-5 sm:p-6">
+            <div className="min-w-0">
               <div className="flex items-center gap-2 text-sm font-medium text-zinc-200">
                 <Mail className="h-4 w-4 text-emerald-400" aria-hidden="true" />
                 <span>{sectionCopy.emailLabel}</span>
@@ -41,7 +41,7 @@ export const Contact: React.FC = () => {
                 {contact.email}
               </p>
             </div>
-            <div className="mt-6 flex items-center gap-3">
+            <div className="mt-6 flex flex-wrap items-center gap-3">
               <a
                 href={`mailto:${contact.email}`}
                 className="inline-flex min-h-[40px] items-center gap-1.5 whitespace-nowrap shrink-0 text-sm font-medium text-zinc-100 transition-colors hover:text-emerald-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 rounded-sm"
@@ -75,9 +75,9 @@ export const Contact: React.FC = () => {
             href={contact.linkedinUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col justify-between rounded-xl border border-zinc-800 bg-[#111114] p-6 transition-colors hover:border-zinc-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+            className="group flex min-w-0 flex-col justify-between rounded-xl border border-zinc-800 bg-[#111114] p-5 transition-colors hover:border-zinc-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 sm:p-6"
           >
-            <div>
+            <div className="min-w-0">
               <div className="flex items-center gap-2 text-sm font-medium text-zinc-200">
                 <Linkedin className="h-4 w-4 text-emerald-400" aria-hidden="true" />
                 <span>{contact.linkedinLabel}</span>
@@ -97,9 +97,9 @@ export const Contact: React.FC = () => {
             href={contact.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col justify-between rounded-xl border border-zinc-800 bg-[#111114] p-6 transition-colors hover:border-zinc-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400"
+            className="group flex min-w-0 flex-col justify-between rounded-xl border border-zinc-800 bg-[#111114] p-5 transition-colors hover:border-zinc-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-400 sm:p-6"
           >
-            <div>
+            <div className="min-w-0">
               <div className="flex items-center gap-2 text-sm font-medium text-zinc-200">
                 <Github className="h-4 w-4 text-emerald-400" aria-hidden="true" />
                 <span>{contact.githubLabel}</span>

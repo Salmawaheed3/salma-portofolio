@@ -8,6 +8,11 @@
 }
 
 @layer base {
+  html,
+  body {
+    overflow-x: clip;
+  }
+
   html {
     scroll-padding-top: 5rem;
     font-family: var(--font-sans);

@@ -588,22 +588,22 @@ export const portfolioContent: Record<Locale, PortfolioLocaleData> = {
         highlightMetric: '100% P@1 · 71% Scenario Recall · +25% Client Leads',
         liveUrl: 'https://tafahom.thetransformix.com/',
         summary:
-          'High-precision Arabic legal RAG system indexing 171 official Saudi labour-law documents (~3,900 pages) with a five-path hybrid retriever and complex-case MyMob lawyer booking—delivering +25% client leads.',
-        tags: ['Azure OpenAI', 'ChromaDB', 'BM25 + RRF', 'MyMob Booking', 'FastAPI', 'PostgreSQL'],
+          'High-precision Arabic legal RAG system indexing 171 official Saudi labour-law documents (~3,900 pages) with a five-path hybrid retriever and complex-case Paymob lawyer booking—delivering +25% client leads.',
+        tags: ['Azure OpenAI', 'ChromaDB', 'BM25 + RRF', 'Paymob Booking', 'FastAPI', 'PostgreSQL'],
         story: {
           projectOverview:
-            'LawAgent is a specialized Arabic Retrieval-Augmented Generation (RAG) legal assistant engineered over 171 official Saudi Labour Law documents (~3,900 pages). Beyond answering exact article lookups and multi-document scenarios accurately from official text, it converts complex inquiries into booked legal consultations via MyMob.',
+            'LawAgent is a specialized Arabic Retrieval-Augmented Generation (RAG) legal assistant engineered over 171 official Saudi Labour Law documents (~3,900 pages). Beyond answering exact article lookups and multi-document scenarios accurately from official text, it converts complex inquiries into booked legal consultations via Paymob.',
           businessContext:
             'Workers and employers asking about Saudi Labour Law require exact, trustworthy answers grounded directly in the official statutory text across ~3,900 pages of Arabic PDFs. Previously, whenever a legal situation became too complex for self-service reading, visitors left the site without contacting a lawyer—costing the firm qualified prospective clients.',
           challenge:
             'Off-the-shelf RAG pipelines break severely on Arabic statutory corpora: fixed-size token chunking splits legal articles mid-clause, naive ingestion retains repealed provisions inside the vector index, bidirectional Unicode control characters corrupt query matching, and dense semantic embeddings alone struggle with exact Arabic article-number references or mandatory law-to-regulation links—leaving baseline scenario recall at just 38%. Moreover, the system needed to turn complex, edge-case visitors into warm consultation leads rather than dead ends.',
           myRole:
-            'I architected and implemented the structure-aware Arabic document chunking pipeline, built the five-path hybrid retrieval and source-capped re-ranking engine, integrated the MyMob consultation-booking handoff for complex legal cases, developed the FastAPI, PostgreSQL, and Gradio stack, and constructed the failure-driven evaluation suite from real failed queries.',
+            'I architected and implemented the structure-aware Arabic document chunking pipeline, built the five-path hybrid retrieval and source-capped re-ranking engine, integrated the Paymob consultation-booking handoff for complex legal cases, developed the FastAPI, PostgreSQL, and Gradio stack, and constructed the failure-driven evaluation suite from real failed queries.',
           solutionDesign:
-            'I approached retrieval precision as a legal document engineering problem prior to generation. At ingestion time, PDFs pass through Azure Document Intelligence layout extraction before branching into a regex-based Core Document Chunker (preserving 1 legal article per chunk with zero mid-article splits) and a type-routed Corpus Chunker, excluding repealed articles so answers never rely on outdated text and enriching each article with an LLM-generated subject line across 4,011 total chunks. At query time, input sanitation strips bidi artifacts and dispatches parallel exact-article regex lookup alongside an LLM Query Planner (up to 4 Modern Standard Arabic queries), executing three complementary search arms fused via Reciprocal Rank Fusion (RRF), round-robin merging, weighted source-capped re-ranking, and a deterministic law-to-regulation join—while routing complex cases directly to book a consultation or case via a MyMob booking link.',
+            'I approached retrieval precision as a legal document engineering problem prior to generation. At ingestion time, PDFs pass through Azure Document Intelligence layout extraction before branching into a regex-based Core Document Chunker (preserving 1 legal article per chunk with zero mid-article splits) and a type-routed Corpus Chunker, excluding repealed articles so answers never rely on outdated text and enriching each article with an LLM-generated subject line across 4,011 total chunks. At query time, input sanitation strips bidi artifacts and dispatches parallel exact-article regex lookup alongside an LLM Query Planner (up to 4 Modern Standard Arabic queries), executing three complementary search arms fused via Reciprocal Rank Fusion (RRF), round-robin merging, weighted source-capped re-ranking, and a deterministic law-to-regulation join—while routing complex cases directly to book a consultation or case via a Paymob booking link.',
           solutionArchitecture: {
             overview:
-              'A two-stage ingestion and hybrid retrieval system indexing 4,011 intact Arabic legal chunks in ChromaDB and BM25, feeding a five-path retrieval, fusion, weight-based re-ranking, and law-to-regulation join pipeline—connected to a MyMob booking handoff for complex cases and served via FastAPI, PostgreSQL, Azure OpenAI, and Gradio.',
+              'A two-stage ingestion and hybrid retrieval system indexing 4,011 intact Arabic legal chunks in ChromaDB and BM25, feeding a five-path retrieval, fusion, weight-based re-ranking, and law-to-regulation join pipeline—connected to a Paymob booking handoff for complex cases and served via FastAPI, PostgreSQL, Azure OpenAI, and Gradio.',
             diagrams: [
               {
                 id: 'lawagent-chunking',
@@ -645,9 +645,9 @@ export const portfolioContent: Record<Locale, PortfolioLocaleData> = {
                   'Balance retrieved evidence across sources before context assembly to prevent single-document dominance.',
               },
               {
-                stage: '04. Failure Evaluation & MyMob Booking Handoff',
+                stage: '04. Failure Evaluation & Paymob Booking Handoff',
                 detail:
-                  'Validate accuracy on real failed queries and guide visitors with complex legal cases to book a consultation or case via MyMob.',
+                  'Validate accuracy on real failed queries and guide visitors with complex legal cases to book a consultation or case via Paymob.',
               },
             ],
           },
@@ -662,7 +662,7 @@ export const portfolioContent: Record<Locale, PortfolioLocaleData> = {
             },
             {
               category: 'Backend, Conversion & UI',
-              items: 'Python, FastAPI, PostgreSQL, Gradio, MyMob Booking Link Integration',
+              items: 'Python, FastAPI, PostgreSQL, Gradio, Paymob Booking Link Integration',
             },
             {
               category: 'Evaluation',
@@ -686,13 +686,13 @@ export const portfolioContent: Record<Locale, PortfolioLocaleData> = {
                 'Applying weights (0.85x corpus, 0.5x superseded) and capping results at 3 chunks per source prevents long auxiliary documents from crowding out primary statutory articles in the LLM context.',
             },
             {
-              decision: 'Failure-Driven Evaluation & Complex-Case MyMob Escalation',
+              decision: 'Failure-Driven Evaluation & Complex-Case Paymob Escalation',
               rationale:
-                'Evaluating against real failed queries closed retrieval blind spots, while routing complex legal cases to MyMob consultation booking turns high-intent visitors into retained firm leads.',
+                'Evaluating against real failed queries closed retrieval blind spots, while routing complex legal cases to Paymob consultation booking turns high-intent visitors into retained firm leads.',
             },
           ],
           resultsAndImpact:
-            'Achieved 100% precision@1 on exact article lookup (90% production article lookup accuracy), 97.5% top-6 known-item recall, raised complex scenario recall from 38% to 71%, and generated a +25% increase in client leads by converting departing visitors into booked MyMob consultations and cases with zero added marketing spend.',
+            'Achieved 100% precision@1 on exact article lookup (90% production article lookup accuracy), 97.5% top-6 known-item recall, raised complex scenario recall from 38% to 71%, and generated a +25% increase in client leads by converting departing visitors into booked Paymob consultations and cases with zero added marketing spend.',
           confidentialityNote:
             'Built over publicly available official Saudi Labour Law documents; internal prompt templates, client firm details, and proprietary evaluation logs remain confidential.',
         },
@@ -1317,7 +1317,7 @@ export const portfolioContent: Record<Locale, PortfolioLocaleData> = {
         metric: '+25%',
         label: 'Client Leads · 100% P@1 Legal Lookup',
         context:
-          'LawAgent indexed 4,011 Saudi labour-law chunks (97.5% Recall@6, 38% → 71% scenario recall) and converted complex inquiries into booked MyMob consultations.',
+          'LawAgent indexed 4,011 Saudi labour-law chunks (97.5% Recall@6, 38% → 71% scenario recall) and converted complex inquiries into booked Paymob consultations.',
       },
       {
         id: 'ach-search',
@@ -1769,22 +1769,22 @@ export const portfolioContent: Record<Locale, PortfolioLocaleData> = {
         highlightMetric: '100% P@1 · 71% Scenario Recall · +25% عملاء',
         liveUrl: 'https://tafahom.thetransformix.com/',
         summary:
-          'مساعد قانوني عربي عالي الدقة يفهرس 171 وثيقة رسمية لنظام العمل السعودي (~3,900 صفحة) عبر 5 مسارات استرجاع هجينة وتوجيه الحالات المعقدة لحجز استشارة عبر MyMob — بزيادة 25%+ في العملاء.',
-        tags: ['Azure OpenAI', 'ChromaDB', 'BM25 + RRF', 'MyMob Booking', 'FastAPI', 'PostgreSQL'],
+          'مساعد قانوني عربي عالي الدقة يفهرس 171 وثيقة رسمية لنظام العمل السعودي (~3,900 صفحة) عبر 5 مسارات استرجاع هجينة وتوجيه الحالات المعقدة لحجز استشارة عبر Paymob — بزيادة 25%+ في العملاء.',
+        tags: ['Azure OpenAI', 'ChromaDB', 'BM25 + RRF', 'Paymob Booking', 'FastAPI', 'PostgreSQL'],
         story: {
           projectOverview:
-            'LawAgent هو مساعد قانوني عربي مبني بنظام Hybrid RAG فوق 171 وثيقة رسمية لنظام العمل السعودي (~3,900 صفحة)، مصمم لتقديم إجابات دقيقة من النص الرسمي واستبعاد المواد الملغاة، مع توجيه الحالات المعقدة لحجز استشارة أو قضية عبر رابط MyMob.',
+            'LawAgent هو مساعد قانوني عربي مبني بنظام Hybrid RAG فوق 171 وثيقة رسمية لنظام العمل السعودي (~3,900 صفحة)، مصمم لتقديم إجابات دقيقة من النص الرسمي واستبعاد المواد الملغاة، مع توجيه الحالات المعقدة لحجز استشارة أو قضية عبر رابط Paymob.',
           businessContext:
             'أسئلة العمال وأصحاب الأعمال عن نظام العمل السعودي تحتاج إجابات دقيقة وموثقة من النص الرسمي. وسابقاً، عندما كانت القضية تصبح معقدة، كان الزائر يغادر الموقع دون التواصل مع محامٍ — ما كان يُفقد المكتب عملاء محتملين فعليين.',
           challenge:
             'أنظمة الـ RAG التقليدية تفشل في النصوص القانونية العربية: التقسيم الثابت يقطع المادة القانونية من المنتصف، الفهرسة العامة تبقي الأحكام الملغاة، رموز التحكم بالاتجاه تشوه المطابقة، والبحث الدلالي وحده لا يضمن دقة أرقام المواد أو الربط باللائحة التنفيذية (38% Scenario Recall مبدئياً). كما كان التحدي تحويل الزوار ذوي الحالات المعقدة إلى عملاء محجوزين بدلاً من مغادرة الموقع.',
           myRole:
-            'قمت بتصميم وبناء الـ Arabic Legal Chunker المراعي للبنية القانونية مع استبعاد الأحكام الملغاة، وهندسة محرك الاسترجاع الهجين ذي الخمسة مسارات، وربط توجيه الحالات المعقدة بحجز الاستشارات عبر رابط MyMob، وتطوير الخدمة بـ FastAPI و PostgreSQL و Gradio مع بناء حزمة تقييم من أسئلة فاشلة حقيقية.',
+            'قمت بتصميم وبناء الـ Arabic Legal Chunker المراعي للبنية القانونية مع استبعاد الأحكام الملغاة، وهندسة محرك الاسترجاع الهجين ذي الخمسة مسارات، وربط توجيه الحالات المعقدة بحجز الاستشارات عبر رابط Paymob، وتطوير الخدمة بـ FastAPI و PostgreSQL و Gradio مع بناء حزمة تقييم من أسئلة فاشلة حقيقية.',
           solutionDesign:
-            'تعاملت مع الدقة القانونية كهندسة بيانات قبل هندسة الـ Prompts. عند الفهرسة، يتم استخراج بنية 170 ملف PDF عبر Azure DI ثم تمريرها على Core Document Chunker (448 مادة كاملة عبر Regex بحيث تمثل كل قطعة وحدة قانونية واحدة بدون تقطيع منتصف المادة) و Corpus Chunker (3,563 قطعة) مع استبعاد الأحكام الملغاة وتوليد عنوان موضوع لكل مادة (4,011 قطعة). عند الاستعلام، يدمج النظام البحث المباشر برقم المادة مع Query Planner و 3 أذرع هجينة عبر RRF وإعادة الترتيب المرجحة والربط باللائحة — وعند اكتشاف قضية معقدة، يوجّه العميل مباشرة لحجز استشارة أو قضية عبر رابط MyMob.',
+            'تعاملت مع الدقة القانونية كهندسة بيانات قبل هندسة الـ Prompts. عند الفهرسة، يتم استخراج بنية 170 ملف PDF عبر Azure DI ثم تمريرها على Core Document Chunker (448 مادة كاملة عبر Regex بحيث تمثل كل قطعة وحدة قانونية واحدة بدون تقطيع منتصف المادة) و Corpus Chunker (3,563 قطعة) مع استبعاد الأحكام الملغاة وتوليد عنوان موضوع لكل مادة (4,011 قطعة). عند الاستعلام، يدمج النظام البحث المباشر برقم المادة مع Query Planner و 3 أذرع هجينة عبر RRF وإعادة الترتيب المرجحة والربط باللائحة — وعند اكتشاف قضية معقدة، يوجّه العميل مباشرة لحجز استشارة أو قضية عبر رابط Paymob.',
           solutionArchitecture: {
             overview:
-              'خط Ingestion مخصص يفهرس 4,011 قطعة كاملة على مستوى المادة في ChromaDB و BM25 ويغذي 5 مسارات استرجاع هجينة وإعادة ترتيب وربطاً حتمياً مع اللائحة، مع ربط الحالات الصعبة ببوابة حجز MyMob عبر FastAPI و PostgreSQL و Azure OpenAI و Gradio.',
+              'خط Ingestion مخصص يفهرس 4,011 قطعة كاملة على مستوى المادة في ChromaDB و BM25 ويغذي 5 مسارات استرجاع هجينة وإعادة ترتيب وربطاً حتمياً مع اللائحة، مع ربط الحالات الصعبة ببوابة حجز Paymob عبر FastAPI و PostgreSQL و Azure OpenAI و Gradio.',
             diagrams: [
               {
                 id: 'lawagent-chunking',
@@ -1826,9 +1826,9 @@ export const portfolioContent: Record<Locale, PortfolioLocaleData> = {
                   'توزيع النتائج المرجحة عبر المصادر لمنع سيطرة وثيقة واحدة على الـ Context.',
               },
               {
-                stage: '04. التقييم وحجز الاستشارات عبر MyMob',
+                stage: '04. التقييم وحجز الاستشارات عبر Paymob',
                 detail:
-                  'القياس على سيناريوهات فشل واقعية وتوجيه القضايا الصعبة لحجز استشارة أو قضية عبر رابط MyMob.',
+                  'القياس على سيناريوهات فشل واقعية وتوجيه القضايا الصعبة لحجز استشارة أو قضية عبر رابط Paymob.',
               },
             ],
           },
@@ -1843,7 +1843,7 @@ export const portfolioContent: Record<Locale, PortfolioLocaleData> = {
             },
             {
               category: 'الخلفية والحجز والواجهة',
-              items: 'Python, FastAPI, PostgreSQL, Gradio, MyMob Booking Link',
+              items: 'Python, FastAPI, PostgreSQL, Gradio, Paymob Booking Link',
             },
             {
               category: 'التقييم والقياس',
@@ -1867,13 +1867,13 @@ export const portfolioContent: Record<Locale, PortfolioLocaleData> = {
                 'تطبيق أوزان الترتيب وتحديد حد أقصى 3 قطع من المصدر الواحد يمنع الوثائق الطويلة الثانوية من حجب نصوص النظام الأساسي.',
             },
             {
-              decision: 'تقييم من أسئلة فاشلة حقيقية + مسار حجز MyMob للقضايا المعقدة',
+              decision: 'تقييم من أسئلة فاشلة حقيقية + مسار حجز Paymob للقضايا المعقدة',
               rationale:
-                'الاختبار ضد أسئلة فشل فيها النظام فعلاً عالج الفجوات الهندسية، بينما توجيه الحالات الصعبة لرابط حجز MyMob يحول الزائر المغادر إلى عميل فعلي للمكتب.',
+                'الاختبار ضد أسئلة فشل فيها النظام فعلاً عالج الفجوات الهندسية، بينما توجيه الحالات الصعبة لرابط حجز Paymob يحول الزائر المغادر إلى عميل فعلي للمكتب.',
             },
           ],
           resultsAndImpact:
-            'تحقيق دقة 100% precision@1 في البحث المباشر (و 90% دقة الوصول للمادة في التشغيل)، و 97.5% في استرجاع Top-6، ورفع الـ Scenario Recall من 38% إلى 71%، مع زيادة +25% في العملاء عبر تحويل الزوار لحجز استشارة أو قضية في MyMob دون تكلفة تسويق إضافية.',
+            'تحقيق دقة 100% precision@1 في البحث المباشر (و 90% دقة الوصول للمادة في التشغيل)، و 97.5% في استرجاع Top-6، ورفع الـ Scenario Recall من 38% إلى 71%، مع زيادة +25% في العملاء عبر تحويل الزوار لحجز استشارة أو قضية في Paymob دون تكلفة تسويق إضافية.',
           confidentialityNote:
             'تم بناء النظام فوق وثائق نظام العمل السعودي الرسمية؛ وتظل صياغات الـ Prompts الداخلية وبيانات المكتب وسجلات الاختبار الخاصة سرية.',
         },
@@ -2498,7 +2498,7 @@ export const portfolioContent: Record<Locale, PortfolioLocaleData> = {
         metric: '+25%',
         label: 'زيادة في العملاء · 100% P@1 قانوني',
         context:
-          'LawAgent فهرس 4,011 مادة لنظام العمل السعودي (97.5% Recall@6 ورفع الـ Scenario Recall من 38% إلى 71%) وحوّل الحالات المعقدة لحجز MyMob.',
+          'LawAgent فهرس 4,011 مادة لنظام العمل السعودي (97.5% Recall@6 ورفع الـ Scenario Recall من 38% إلى 71%) وحوّل الحالات المعقدة لحجز Paymob.',
       },
       {
         id: 'ach-search',
